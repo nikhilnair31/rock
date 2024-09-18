@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "rock",
+    "version": "0.1",
+    "description": "it's a rock",
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "permissions": [
+        "storage", 
+        "activeTab", 
+        "scripting",
+        "tabs"
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [ "images/rock.png" ],
+            "matches": [ "<all_urls>" ]
+        }
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+}  
